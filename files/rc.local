@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -e /root/ran_customization ]; then
+    echo -e "> Start Arcade"
+    cd /opt/arcade && curl https://raw.githubusercontent.com/adeleporte/arcade2/main/docker-compose.yml -o docker-compose.yml && docker-compose up -d
+
+    exit
+else
+    /root/setup.sh &> /var/log/photon-customization.log
+fi

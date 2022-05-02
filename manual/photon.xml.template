@@ -1,0 +1,38 @@
+    <ProductSection ovf:required="true">
+    <Info>Information about the installed software</Info>
+      <Product>Arcade 2 Appliance</Product>
+      <Vendor>VMware</Vendor>
+      <Version>{{VERSION}}</Version>
+      <ProductUrl>https://flings.vmware.com/scriptsarcade</ProductUrl>
+      <VendorUrl>https://flings.vmware.com/</VendorUrl>
+      <Category>Networking</Category>
+        <Property ovf:key="guestinfo.hostname" ovf:type="string" ovf:userConfigurable="true" ovf:required="true" ovf:qualifiers="MinLen(1),MaxLen(20)" ovf:value="varcade">
+            <Label>Hostname</Label>
+            <Description>Hostname of system</Description>
+        </Property>
+        <Property ovf:key="guestinfo.ipaddress" ovf:type="string" ovf:userConfigurable="true">
+            <Label>IP Address</Label>
+            <Description>IP Address of the system (Leave blank if DHCP)</Description>
+        </Property>
+        <Property ovf:key="guestinfo.netmask" ovf:type="uint8" ovf:value="24" ovf:userConfigurable="true">
+            <Label>Netmask Prefix</Label>
+            <Description>CIDR notation (e.g. 24 for 255.255.255.0) - Ignored if DHCP</Description>
+        </Property>
+        <Property ovf:key="guestinfo.gateway" ovf:type="string" ovf:userConfigurable="true">
+            <Label>Gateway</Label>
+            <Description>Gateway of the system (Leave blank if DHCP)</Description>
+        </Property>
+        <Property ovf:key="guestinfo.dns" ovf:type="string" ovf:userConfigurable="true">
+            <Label>DNS</Label>
+            <Description>DNS Server (Leave blank if DHCP)</Description>
+        </Property>
+        <Property ovf:key="guestinfo.domain" ovf:type="string" ovf:userConfigurable="true">
+            <Label>DNS Domain</Label>
+            <Description>DNS Domain (Leave blank if DHCP)</Description>
+        </Property>
+        <Category>Credentials</Category>
+        <Property ovf:key="guestinfo.root_password" ovf:password="true" ovf:type="string" ovf:userConfigurable="true" ovf:qualifiers="MinLen(3),MaxLen(20)" ovf:required="true" ovf:value="">
+            <Label>Root Password</Label>
+            <Description>Password to login in as root. Please use a secure password</Description>
+        </Property>
+    </ProductSection>
