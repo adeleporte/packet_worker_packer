@@ -28,8 +28,8 @@ tdnf install -y \
   cronie
 
 
-echo '> Create arcade homedir'
-mkdir -p /opt/arcade
+echo '> Create atp_replay homedir'
+mkdir -p /opt/atp_replay
 
 echo '> Enable docker'
 systemctl enable docker
@@ -40,8 +40,8 @@ curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compo
 chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
-echo '> Pull Arcade'
-cd /opt/arcade && curl https://raw.githubusercontent.com/adeleporte/arcade2/main/docker-compose.yml -o docker-compose.yml && docker-compose up -d
+echo '> Pull atp_replay'
+cd /opt/atp_replay && curl https://raw.githubusercontent.com/adeleporte/arcade2/main/docker-compose.yml -o docker-compose.yml && docker-compose up -d
 
 echo '> Disable cloud-init ...'
 systemctl disable cloud-init
