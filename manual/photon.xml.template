@@ -6,7 +6,7 @@
       <ProductUrl>https://flings.vmware.com/scriptsarcade</ProductUrl>
       <VendorUrl>https://flings.vmware.com/</VendorUrl>
       <Category>Networking</Category>
-        <Property ovf:key="guestinfo.hostname" ovf:type="string" ovf:userConfigurable="true" ovf:required="true" ovf:qualifiers="MinLen(1),MaxLen(20)" ovf:value="varcade">
+        <Property ovf:key="guestinfo.hostname" ovf:type="string" ovf:userConfigurable="true" ovf:required="true" ovf:qualifiers="MinLen(1),MaxLen(20)" ovf:value="atp_replay">
             <Label>Hostname</Label>
             <Description>Hostname of system</Description>
         </Property>

@@ -68,8 +68,8 @@ __CUSTOMIZE_PHOTON__
     echo -e "\e[92mConfiguring hostname ..." > /dev/console
     hostnamectl set-hostname ${HOSTNAME}
 
-    echo -e "> Start Arcade"
-    cd /opt/arcade && curl https://raw.githubusercontent.com/adeleporte/arcade2/main/docker-compose.yml -o docker-compose.yml && docker-compose up -d
-
-
+    echo -e "> Start atp_replay"
+    systemctl enable worker
+    systemctl start worker
+    # cd /opt/arcade && curl https://raw.githubusercontent.com/adeleporte/arcade2/main/docker-compose.yml -o docker-compose.yml && docker-compose up -d
 fi

@@ -1,0 +1,15 @@
+[Unit]
+Description=PCAP Replay Worker Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+User=root
+ExecStart=/root/worker_linux -device ens160 -port 9000
+WorkingDirectory=/root
+
+[Install]
+WantedBy=multi-user.target

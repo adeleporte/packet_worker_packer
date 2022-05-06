@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "vm_name": "atp_replay_Appliance",
+  "vm_name": "atp_replay_Appliance2",
 
   "vcenter_server":"172.17.9.3",
   "vcenter_username":"administrator@cpod-vcn.az-fkd.cloud-garage.net",
@@ -21,6 +21,6 @@
   "disksize": "8192",
 
   "guest_username": "root",
-  "guest_password": "unbuntu1"
+  "guest_password": "ubuntulinux1"
 
 }
