@@ -54,4 +54,7 @@ touch /etc/cloud/cloud-init.disabled
 # crontab arcadecron
 # rm arcadecron
 
+echo '> Remove network config file'
+rm -rf /etc/systemd/network/99-dhcp-en.network
+
 echo '> Done'

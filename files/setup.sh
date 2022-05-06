@@ -45,7 +45,7 @@ else
 Name=ens160
 
 [Network]
-DHCP=yes
+
 __CUSTOMIZE_PHOTON__
 
     cat > /etc/systemd/network/${CP_NETWORK_CONFIG_FILE} << __CUSTOMIZE_PHOTON__
@@ -56,7 +56,6 @@ Name=ens192
 Address=${IP_ADDRESS}/${NETMASK}
 Gateway=${GATEWAY}
 DNS=${DNS_SERVER}
-Domain=${DNS_DOMAIN}
 __CUSTOMIZE_PHOTON__
 
     echo "${IP_ADDRESS} ${HOSTNAME}" >> /etc/hosts
