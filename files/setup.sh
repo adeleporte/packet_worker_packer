@@ -32,26 +32,25 @@ else
     echo "root:${ROOT_PASSWORD}" | /usr/sbin/chpasswd
 
 
-    ##################################
-    ### No User Input, assume DHCP ###
-    ##################################
-    if [ -z "${IP_ADDRESS}" ]; then
-        cat > /etc/systemd/network/${NETWORK_CONFIG_FILE} << __CUSTOMIZE_PHOTON__
-[Match]
-Name=e*
-
-[Network]
-DHCP=yes
-IPv6AcceptRA=no
-__CUSTOMIZE_PHOTON__
     #########################
     ### Static IP Address ###
     #########################
-    else
-        echo -e "\e[92mConfiguring Static IP Address ..." > /dev/console
-        cat > /etc/systemd/network/${NETWORK_CONFIG_FILE} << __CUSTOMIZE_PHOTON__
+
+    DP_NETWORK_CONFIG_FILE="dp-dynamic-en.network"
+    CP_NETWORK_CONFIG_FILE="172-static-en.network"
+
+    echo -e "\e[92mConfiguring Static IP Address ..." > /dev/console
+    cat > /etc/systemd/network/${DP_NETWORK_CONFIG_FILE} << __CUSTOMIZE_PHOTON__
 [Match]
-Name=e*
+Name=ens160
+
+[Network]
+DHCP=yes
+__CUSTOMIZE_PHOTON__
+
+    cat > /etc/systemd/network/${CP_NETWORK_CONFIG_FILE} << __CUSTOMIZE_PHOTON__
+[Match]
+Name=ens192
 
 [Network]
 Address=${IP_ADDRESS}/${NETMASK}
@@ -60,10 +59,10 @@ DNS=${DNS_SERVER}
 Domain=${DNS_DOMAIN}
 __CUSTOMIZE_PHOTON__
 
-        echo "${IP_ADDRESS} ${HOSTNAME}" >> /etc/hosts
-        echo -e "\e[92mRestarting Network ..." > /dev/console
-        systemctl restart systemd-networkd
-    fi
+    echo "${IP_ADDRESS} ${HOSTNAME}" >> /etc/hosts
+    echo -e "\e[92mRestarting Network ..." > /dev/console
+    systemctl restart systemd-networkd
+    
 
     echo -e "\e[92mConfiguring hostname ..." > /dev/console
     hostnamectl set-hostname ${HOSTNAME}
