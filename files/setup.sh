@@ -33,6 +33,14 @@ else
 
 
     #########################
+    ### Static IP tables ###
+    #########################
+
+    echo -e "\e[92mConfiguring iptables rules ..." > /dev/console
+
+    iptables -A INPUT -i ens160 -j DROP
+
+    #########################
     ### Static IP Address ###
     #########################
 

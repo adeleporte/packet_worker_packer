@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "vm_name": "atp_replay_Appliance2",
+  "vm_name": "atp_replay_Appliance",
 
   "vcenter_server":"172.17.9.3",
   "vcenter_username":"administrator@cpod-vcn.az-fkd.cloud-garage.net",
