@@ -8,7 +8,7 @@ Type=simple
 Restart=always
 RestartSec=5
 User=root
-ExecStart=/root/worker_linux -device ens160 -port 9000
+ExecStart=/root/worker_linux -device eth0 -port 9000
 WorkingDirectory=/root
 
 [Install]

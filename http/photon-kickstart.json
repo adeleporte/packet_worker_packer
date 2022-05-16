@@ -3,7 +3,7 @@
     "password":
         {
             "crypted": false,
-            "text": "unbuntu1"
+            "text": "VMware1!"
         },
     "disk": "/dev/sda",
     "packagelist_file": "packages_minimal.json",
